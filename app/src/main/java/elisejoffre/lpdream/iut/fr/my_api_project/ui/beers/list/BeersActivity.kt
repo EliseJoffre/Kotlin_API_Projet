@@ -2,6 +2,7 @@ package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.list
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import elisejoffre.lpdream.iut.fr.my_api_project.R
@@ -27,15 +28,12 @@ class BeersActivity : AppCompatActivity() {
         setupRecyclerView()
     }
 
-    override fun onResume() {
-        super.onResume()
-        doAsync {
-            val data = BeerRepository.getAll()
-            uiThread { beersAdapter.replaceData(data) }
-        }
-    }
 
     private fun setupAdapter() {
+        BeerRepository.getAll().observe(this, Observer {
+            beersAdapter.submitList(it)
+        })
+
         beersAdapter.apply {
             onClick = { startAnimatedActivity(intentFor<DetailBeerActivity>("id" to it.id)) }
             onLongClick = { showDeletePopup(it) }
@@ -56,13 +54,7 @@ class BeersActivity : AppCompatActivity() {
 
     private fun showDeletePopup(beer: Beer) {
         alert(getString(R.string.delete_beer_warning, beer.name)) {
-            yesButton {
-                doAsync {
-                    BeerRepository.delete(beer)
-                    val data = BeerRepository.getAll()
-                    uiThread { beersAdapter.replaceData(data) }
-                }
-            }
+            yesButton { BeerRepository.delete(beer) }
             noButton { }
         }.show()
     }

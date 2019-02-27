@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.Observer
 import elisejoffre.lpdream.iut.fr.my_api_project.R
 import elisejoffre.lpdream.iut.fr.my_api_project.data.Beer
 import elisejoffre.lpdream.iut.fr.my_api_project.data.BeerRepository
@@ -19,13 +20,11 @@ class DetailBeerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_beer)
 
-        doAsync {
-            beer = BeerRepository.getById(intent.getIntExtra("id", 0) )
-            uiThread {
-                setupToolbar()
-                setupViews()
-            }
-        }
+        BeerRepository.getById(intent.getIntExtra("id", 0)).observe(this, Observer {
+            beer = it
+            setupToolbar()
+            setupViews()
+        })
     }
 
     override fun finish() {

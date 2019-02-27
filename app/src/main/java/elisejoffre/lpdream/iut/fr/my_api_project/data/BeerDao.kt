@@ -1,15 +1,19 @@
 package elisejoffre.lpdream.iut.fr.my_api_project.data
 
 import androidx.room.*
+import androidx.lifecycle.LiveData
 
 @Dao
 interface BeerDao {
 
     @Query("SELECT * FROM beer WHERE id = :id")
-    fun getById(id: Int): Beer
+    fun getById(id: Int): LiveData<Beer>
 
     @Query("SELECT * FROM Beer ORDER BY name")
     fun getAll(): List<Beer>
+
+    @Query("SELECT * FROM Beer ORDER BY name")
+    fun getAllLive(): LiveData<List<Beer>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(movie: Beer)

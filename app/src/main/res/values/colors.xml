@@ -2,5 +2,7 @@
 <resources>
     <color name="colorPrimary">#fafafa</color>
     <color name="colorPrimaryDark">#c7c7c7</color>
-    <color name="colorAccent">#1d398c</color>
+    <color name="colorAccent">#AF6E44</color>
+    <color name="colorBeer">#FEC307</color>
+
 </resources>

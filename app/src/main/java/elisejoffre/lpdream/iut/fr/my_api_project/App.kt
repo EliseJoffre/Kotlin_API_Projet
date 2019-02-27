@@ -22,7 +22,7 @@ class App: Application() {
 
                 )
 
-        doAsync { BeerRepository.insertAll(beers) }
+         BeerRepository.insertAll(beers)
 
     }
 }
