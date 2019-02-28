@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.ViewModelProviders
 import elisejoffre.lpdream.iut.fr.my_api_project.R
 import elisejoffre.lpdream.iut.fr.my_api_project.data.Beer
 import elisejoffre.lpdream.iut.fr.my_api_project.data.BeerRepository
@@ -18,7 +19,8 @@ import java.util.*
 
 class CreateBeerActivity : AppCompatActivity() {
 
-    private var beer = Beer()
+    private val viewModel: CreateBeerViewModel by lazy { ViewModelProviders.of(this).get(CreateBeerViewModel::class.java) }
+
 
     private var datePickerDialog: DatePickerDialog? = null
 
@@ -47,7 +49,7 @@ class CreateBeerActivity : AppCompatActivity() {
         }
         R.id.confirm -> {
             doAsync {
-                BeerRepository.insert(beer)
+                viewModel.insert()
                 uiThread { ActivityCompat.finishAfterTransition(this@CreateBeerActivity) }
             }
             true
@@ -62,12 +64,12 @@ class CreateBeerActivity : AppCompatActivity() {
     private fun setupViews() {
         nameEditText.apply {
             requestFocus()
-            textChangedListener { onTextChanged { charSequence, _, _, _ -> beer.name = charSequence.toString().capitalize() } }
+            textChangedListener { onTextChanged { charSequence, _, _, _ -> viewModel.name = charSequence.toString().capitalize() } }
         }
 
-        tagEditText.textChangedListener { onTextChanged { charSequence, _, _, _ -> beer.tagline = charSequence.toString().capitalize() } }
+        tagEditText.textChangedListener { onTextChanged { charSequence, _, _, _ -> viewModel.tagline = charSequence.toString().capitalize() } }
 
-        descriptionEditText.textChangedListener { onTextChanged { charSequence, _, _, _ -> beer.description = charSequence.toString().capitalize() } }
+        descriptionEditText.textChangedListener { onTextChanged { charSequence, _, _, _ -> viewModel.description = charSequence.toString().capitalize() } }
 
 
 

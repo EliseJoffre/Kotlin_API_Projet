@@ -5,6 +5,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import elisejoffre.lpdream.iut.fr.my_api_project.R
 import elisejoffre.lpdream.iut.fr.my_api_project.data.Beer
 import elisejoffre.lpdream.iut.fr.my_api_project.data.BeerRepository
@@ -14,13 +15,16 @@ import org.jetbrains.anko.uiThread
 
 class DetailBeerActivity : AppCompatActivity() {
 
+    private val viewModel: DetailBeerViewModel by lazy { ViewModelProviders.of(this).get(DetailBeerViewModel::class.java) }
     private var beer: Beer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_beer)
 
-        BeerRepository.getById(intent.getIntExtra("id", 0)).observe(this, Observer {
+        viewModel.beerId.value = intent.getIntExtra("id", 0)
+
+        viewModel.beer.observe(this, Observer {
             beer = it
             setupToolbar()
             setupViews()
