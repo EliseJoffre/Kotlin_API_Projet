@@ -1,40 +1,41 @@
 package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.list
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import elisejoffre.lpdream.iut.fr.my_api_project.BR
 import elisejoffre.lpdream.iut.fr.my_api_project.R
 import elisejoffre.lpdream.iut.fr.my_api_project.data.Beer
-import kotlinx.android.synthetic.main.item_beer.view.*
-import org.jetbrains.anko.sdk27.coroutines.onClick
-import org.jetbrains.anko.sdk27.coroutines.onLongClick
+
 
 class BeersAdapter: ListAdapter<Beer, BeersAdapter.BeerViewHolder>(BeerDiffCallback()) {
 
     var onClick: ((item: Beer) -> Unit)? = null
     var onLongClick: ((item: Beer) -> Unit)? = null
 
+    override fun getItemViewType(position: Int): Int = R.layout.item_beer
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BeerViewHolder =
-            BeerViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_beer, parent, false))
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BeerViewHolder {
+        val viewDataBinding: ViewDataBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), viewType, parent, false)
+        return BeerViewHolder(viewDataBinding)
+    }
 
     override fun onBindViewHolder(holder: BeerViewHolder, position: Int) {
-        holder.bind(getItem(position), object:
-                OnBeerClickListener {
-            override fun onItemClick(beer: Beer) {
-                onClick?.invoke(beer)
+        holder.bind(getItem(position), object: OnBeerClickListener {
+            override fun onItemClick(movie: Beer) {
+                onClick?.invoke(movie)
             }
 
-            override fun onItemLongClick(beer: Beer) {
-                onLongClick?.invoke(beer)
+            override fun onItemLongClick(movie: Beer): Boolean {
+                onLongClick?.invoke(movie)
+                return true
             }
         })
     }
-
 
     class BeerDiffCallback: DiffUtil.ItemCallback<Beer>() {
 
@@ -43,23 +44,20 @@ class BeersAdapter: ListAdapter<Beer, BeersAdapter.BeerViewHolder>(BeerDiffCallb
         override fun areItemsTheSame(oldItem: Beer, newItem: Beer): Boolean = oldItem.id == newItem.id
     }
 
-    class BeerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class BeerViewHolder(private val viewDataBinding: ViewDataBinding): RecyclerView.ViewHolder(viewDataBinding.root) {
 
-        fun bind(beer: Beer, onBeerClickListener: OnBeerClickListener) {
-            itemView.name.text = beer.name
-            itemView.tagline.text = beer.tagline
-            itemView.root.apply {
-                onClick { onBeerClickListener.onItemClick(beer) }
-                onLongClick { onBeerClickListener.onItemLongClick(beer) }
-            }
+        fun bind(beer: Beer, onMovieClickListener: OnBeerClickListener) {
+            viewDataBinding.setVariable(BR.beer, beer)
+            viewDataBinding.setVariable(BR.listener, onMovieClickListener)
+            viewDataBinding.executePendingBindings()
         }
     }
 
     interface OnBeerClickListener {
 
-        fun onItemClick(beer: Beer)
+        fun onItemClick(movie: Beer)
 
-        fun onItemLongClick(beer: Beer)
+        fun onItemLongClick(movie:Beer): Boolean
 
     }
 }
