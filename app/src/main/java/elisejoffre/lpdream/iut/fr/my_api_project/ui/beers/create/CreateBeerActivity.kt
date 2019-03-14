@@ -1,32 +1,29 @@
 package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.create
 
-import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.ViewModelProviders
 import elisejoffre.lpdream.iut.fr.my_api_project.R
-import elisejoffre.lpdream.iut.fr.my_api_project.data.Beer
-import elisejoffre.lpdream.iut.fr.my_api_project.data.BeerRepository
-import kotlinx.android.synthetic.main.activity_create_beer.*
 
 import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.sdk27.coroutines.textChangedListener
 import org.jetbrains.anko.uiThread
-import java.util.*
 
 class CreateBeerActivity : AppCompatActivity() {
 
+    private lateinit var binding: elisejoffre.lpdream.iut.fr.my_api_project.databinding.ActivityCreateBeerBinding
+
     private val viewModel: CreateBeerViewModel by lazy { ViewModelProviders.of(this).get(CreateBeerViewModel::class.java) }
-
-
-    private var datePickerDialog: DatePickerDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_beer)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_create_beer)
+        binding.setVariable(BR.viewModel, viewModel)
+        binding.setLifecycleOwner(this)
 
         setupToolbar()
         setupViews()
@@ -58,22 +55,17 @@ class CreateBeerActivity : AppCompatActivity() {
     }
 
     private fun setupToolbar() {
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
+
     private fun setupViews() {
-        nameEditText.apply {
-            requestFocus()
-            textChangedListener { onTextChanged { charSequence, _, _, _ -> viewModel.name = charSequence.toString().capitalize() } }
-        }
-
-        tagEditText.textChangedListener { onTextChanged { charSequence, _, _, _ -> viewModel.tagline = charSequence.toString().capitalize() } }
-
-        descriptionEditText.textChangedListener { onTextChanged { charSequence, _, _, _ -> viewModel.description = charSequence.toString().capitalize() } }
-
-
+        binding.nameEditText.requestFocus()
+        binding.tagEditText.requestFocus()
+        binding.descriptionEditText.requestFocus()
 
     }
+
 
 
 }

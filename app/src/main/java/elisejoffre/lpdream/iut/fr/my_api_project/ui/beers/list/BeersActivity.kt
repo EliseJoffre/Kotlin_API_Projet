@@ -2,33 +2,42 @@ package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.list
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import elisejoffre.lpdream.iut.fr.my_api_project.R
-import elisejoffre.lpdream.iut.fr.my_api_project.data.Beer
-import elisejoffre.lpdream.iut.fr.my_api_project.data.BeerRepository
+import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer
+import elisejoffre.lpdream.iut.fr.my_api_project.data.remote.BeersResponseCallback
+import elisejoffre.lpdream.iut.fr.my_api_project.databinding.ActivityBeersBinding
+import elisejoffre.lpdream.iut.fr.my_api_project.extension.showAction
+import elisejoffre.lpdream.iut.fr.my_api_project.extension.showError
 import elisejoffre.lpdream.iut.fr.my_api_project.extension.startAnimatedActivity
 import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.create.CreateBeerActivity
 import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.detail.DetailBeerActivity
-import kotlinx.android.synthetic.main.activity_beers.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class BeersActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityBeersBinding
+
     private val viewModel: BeersViewModel by lazy { ViewModelProviders.of(this).get(BeersViewModel::class.java) }
+
     private var beersAdapter = BeersAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_beers)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_beers)
+        binding.setVariable(BR.viewModel, viewModel)
+        binding.setLifecycleOwner(this)
 
         setupAdapter()
         setupFab()
         setupRecyclerView()
+        setupSwipeRefreshLayout()
     }
 
 
@@ -44,16 +53,41 @@ class BeersActivity : AppCompatActivity() {
     }
 
     private fun setupFab() {
-        fab.onClick { startAnimatedActivity(intentFor<CreateBeerActivity>()) }
+        binding.fab.onClick { startAnimatedActivity(intentFor<CreateBeerActivity>()) }
     }
 
     private fun setupRecyclerView() {
-        recyclerView.apply {
+        binding.recyclerView.apply {
             addItemDecoration(DividerItemDecoration(this@BeersActivity, DividerItemDecoration.VERTICAL))
-            layoutManager = LinearLayoutManager(this@BeersActivity) as RecyclerView.LayoutManager?
+            layoutManager = LinearLayoutManager(this@BeersActivity)
             adapter = beersAdapter
         }
     }
+
+    private fun setupSwipeRefreshLayout() {
+        binding.swipeRefreshLayout.apply {
+
+            fun refresh() {
+                isRefreshing = true
+                viewModel.refresh(object: BeersResponseCallback {
+                    override fun onSuccess() {
+                        binding.root.showAction(getString(R.string.beers_loaded))
+                        isRefreshing = false
+                    }
+
+                    override fun onError(throwable: Throwable) {
+                        binding.root.showError(getString(R.string.beers_loading_error))
+                        isRefreshing = false
+                    }
+                })
+            }
+
+            setOnRefreshListener { refresh() }
+            post { refresh() }
+        }
+    }
+
+
 
     private fun showDeletePopup(beer: Beer) {
         alert(getString(R.string.delete_beer_warning, beer.name)) {

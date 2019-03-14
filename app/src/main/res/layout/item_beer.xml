@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<layout   xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="beer" type="elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer"/>
+        <variable name="listener" type="elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.list.BeersAdapter.OnBeerClickListener"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/root"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
         android:background="?attr/selectableItemBackground"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> listener.onItemClick(beer)}"
+        android:onLongClick="@{() -> listener.onItemLongClick(beer)}">
 
     <TextView
             style="@style/Title"
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Avengers"
+            android:text="@{beer.name}"
             android:layout_marginTop="@dimen/item_margin"
             android:layout_marginStart="@dimen/item_margin"
             android:layout_marginEnd="@dimen/item_margin"
@@ -27,7 +36,7 @@
             android:id="@+id/tagline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Un film de super-héros."
+            android:text="@{beer.tagline}"
             android:layout_marginStart="@dimen/item_margin"
             android:layout_marginEnd="@dimen/item_margin"
             android:layout_marginBottom="@dimen/item_margin"
@@ -37,3 +46,5 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

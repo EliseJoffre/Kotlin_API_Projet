@@ -3,20 +3,22 @@ package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.create
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import elisejoffre.lpdream.iut.fr.my_api_project.data.Beer
-import elisejoffre.lpdream.iut.fr.my_api_project.data.BeerRepository
-import java.util.*
+import androidx.lifecycle.MutableLiveData
+import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer
+import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.BeerRepository
 
 class CreateBeerViewModel(application: Application): AndroidViewModel(application) {
 
 
-    var name: String = "Sans titre"
+    var name: MutableLiveData<String> = MutableLiveData()
 
-    var tagline: String = "Inconnu"
+    var tagline: MutableLiveData<String> = MutableLiveData()
 
-    var description: String = "Inconnu"
+    var description: MutableLiveData<String> = MutableLiveData()
+
+    var imageurl: MutableLiveData<String> = MutableLiveData()
 
     fun insert() {
-        BeerRepository.insert(Beer(name = name, tagline = tagline,description = description))
+        BeerRepository.insert(Beer(name = name.value ?: "", tagline = tagline.value ?: "", description = description.value ?: "", image_url = imageurl.value ?: ""))
     }
 }

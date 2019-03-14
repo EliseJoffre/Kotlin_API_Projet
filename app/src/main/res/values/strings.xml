@@ -12,6 +12,7 @@
     <string name="tag">Tag</string>
     <string name="description">Description</string>
 
-
+    <string name="beers_loaded">Les bières ont bien été récupérées.</string>
+    <string name="beers_loading_error">Désolé, une erreur a empêché la récupération des bières.</string>
 </resources>
 

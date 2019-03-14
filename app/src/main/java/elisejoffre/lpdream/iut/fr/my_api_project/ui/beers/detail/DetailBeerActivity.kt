@@ -1,34 +1,46 @@
 package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.detail
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.lifecycle.Observer
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.ViewModelProviders
 import elisejoffre.lpdream.iut.fr.my_api_project.R
-import elisejoffre.lpdream.iut.fr.my_api_project.data.Beer
-import elisejoffre.lpdream.iut.fr.my_api_project.data.BeerRepository
+import elisejoffre.lpdream.iut.fr.my_api_project.databinding.ActivityDetailBeerBinding
 import kotlinx.android.synthetic.main.activity_detail_beer.*
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
+import android.graphics.BitmapFactory
+import android.graphics.Bitmap
+import android.util.Log
+import android.widget.ImageView
+import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
+import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.BeerDatabase
+import java.net.URL
+
+
+
 
 class DetailBeerActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityDetailBeerBinding
+
     private val viewModel: DetailBeerViewModel by lazy { ViewModelProviders.of(this).get(DetailBeerViewModel::class.java) }
-    private var beer: Beer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_beer)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_detail_beer)
+        binding.setVariable(BR.viewModel, viewModel)
+        binding.setLifecycleOwner(this)
 
         viewModel.beerId.value = intent.getIntExtra("id", 0)
+        setupToolbar()
 
-        viewModel.beer.observe(this, Observer {
-            beer = it
-            setupToolbar()
-            setupViews()
-        })
     }
 
     override fun finish() {
@@ -45,17 +57,8 @@ class DetailBeerActivity : AppCompatActivity() {
     }
 
     private fun setupToolbar() {
-        setSupportActionBar(toolbar)
-        title = beer?.name
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    private fun setupViews() {
-        beer?.let { beer1 ->
-            name.text = beer1.name
-            tag.text = beer1.tagline
-            description.text = beer1.description
-
-        }
-    }
 }

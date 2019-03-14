@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import elisejoffre.lpdream.iut.fr.my_api_project.BR
 import elisejoffre.lpdream.iut.fr.my_api_project.R
-import elisejoffre.lpdream.iut.fr.my_api_project.data.Beer
+import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer
 
 
 class BeersAdapter: ListAdapter<Beer, BeersAdapter.BeerViewHolder>(BeerDiffCallback()) {
@@ -26,12 +26,12 @@ class BeersAdapter: ListAdapter<Beer, BeersAdapter.BeerViewHolder>(BeerDiffCallb
 
     override fun onBindViewHolder(holder: BeerViewHolder, position: Int) {
         holder.bind(getItem(position), object: OnBeerClickListener {
-            override fun onItemClick(movie: Beer) {
-                onClick?.invoke(movie)
+            override fun onItemClick(beer: Beer) {
+                onClick?.invoke(beer)
             }
 
-            override fun onItemLongClick(movie: Beer): Boolean {
-                onLongClick?.invoke(movie)
+            override fun onItemLongClick(beer: Beer): Boolean {
+                onLongClick?.invoke(beer)
                 return true
             }
         })
@@ -46,18 +46,18 @@ class BeersAdapter: ListAdapter<Beer, BeersAdapter.BeerViewHolder>(BeerDiffCallb
 
     class BeerViewHolder(private val viewDataBinding: ViewDataBinding): RecyclerView.ViewHolder(viewDataBinding.root) {
 
-        fun bind(beer: Beer, onMovieClickListener: OnBeerClickListener) {
+        fun bind(beer: Beer, onBeerClickListener: OnBeerClickListener) {
             viewDataBinding.setVariable(BR.beer, beer)
-            viewDataBinding.setVariable(BR.listener, onMovieClickListener)
+            viewDataBinding.setVariable(BR.listener, onBeerClickListener)
             viewDataBinding.executePendingBindings()
         }
     }
 
     interface OnBeerClickListener {
 
-        fun onItemClick(movie: Beer)
+        fun onItemClick(beer: Beer)
 
-        fun onItemLongClick(movie:Beer): Boolean
+        fun onItemLongClick(beer: Beer): Boolean
 
     }
 }
