@@ -2,6 +2,7 @@ package elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.StringListConverter
 import java.util.*
 
 @Entity(tableName = "beer")
@@ -18,12 +19,13 @@ data class Beer(
 
         var image_url:String? = null,
 
-        var food_pairing: Array<String> = emptyArray(),
+        var food_pairing: String = "",
 
-        var ingredients: Array<Objects> = emptyArray()
+        var brewers_tips: String = "",
 
+        var abv: String = "",
 
-
+        var first_brewed: String = ""
 
 
 )

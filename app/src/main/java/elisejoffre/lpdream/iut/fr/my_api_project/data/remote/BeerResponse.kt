@@ -17,15 +17,18 @@ data class BeerResponse(
         val description: String,
 
         @SerializedName("image_url")
-        val image_url: String
+        val image_url: String,
 
+        @SerializedName("food_pairing")
+        val food_pairing:List<String>,
 
+        @SerializedName("brewers_tips")
+        val brewers_tips: String,
 
+        @SerializedName("abv")
+        val abv :String,
 
-
-
-
-
-
+        @SerializedName("first_brewed")
+        val first_brewed :String
 
 )

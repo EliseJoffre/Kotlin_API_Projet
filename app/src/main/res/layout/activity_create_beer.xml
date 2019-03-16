@@ -28,17 +28,22 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/item_margin">
 
+
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/nameLayout"
                     style="@style/TextInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/name"
+                    android:textColorHint="@color/colorAccent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
 
-                    <com.google.android.material.textfield.TextInputEditText
+
+                <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/nameEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -55,6 +60,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/tag"
+                    android:textColorHint="@color/colorAccent"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/nameLayout">
@@ -74,6 +81,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/description"
+                    android:textColorHint="@color/colorAccent"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tagLayout">
@@ -87,9 +96,6 @@
 
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

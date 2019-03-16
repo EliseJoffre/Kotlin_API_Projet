@@ -82,6 +82,120 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
+            <TextView
+                style="@style/Text"
+                android:id="@+id/food_pairing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Food Pairing :"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/item_margin"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <TextView
+                style="@style/Text"
+                android:id="@+id/food_pairing_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.beer.food_pairing}"
+                android:textSize="17sp"
+                android:layout_marginTop="@dimen/item_margin"
+                android:layout_marginBottom="@dimen/item_margin"
+                app:layout_constraintTop_toBottomOf="@id/food_pairing"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                style="@style/Text"
+                android:id="@+id/brewers_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brewers tips :"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/item_margin"
+                app:layout_constraintTop_toBottomOf="@id/food_pairing_list"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                style="@style/Text"
+                android:id="@+id/brewers_tips_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.beer.brewers_tips}"
+                android:textSize="17sp"
+                android:layout_marginTop="@dimen/item_margin"
+                app:layout_constraintTop_toBottomOf="@id/brewers_tips"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                style="@style/Text"
+                android:id="@+id/alcohol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alcohol by volume :"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/item_margin"
+                app:layout_constraintTop_toBottomOf="@id/brewers_tips_list"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                style="@style/Text"
+                android:id="@+id/alcohol_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.beer.abv}"
+                android:textSize="17sp"
+                android:layout_marginTop="@dimen/item_margin"
+                app:layout_constraintTop_toBottomOf="@id/alcohol"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                style="@style/Text"
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="First Brewed :"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/item_margin"
+                app:layout_constraintTop_toBottomOf="@id/alcohol_list"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                style="@style/Text"
+                android:id="@+id/date_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.beer.first_brewed}"
+                android:textSize="17sp"
+                android:layout_marginTop="@dimen/item_margin"
+                app:layout_constraintTop_toBottomOf="@id/date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                style="@style/Text"
+                android:id="@+id/space"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="17sp"
+                android:layout_marginTop="@dimen/item_margin"
+                app:layout_constraintTop_toBottomOf="@id/date_list"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

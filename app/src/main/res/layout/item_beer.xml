@@ -17,16 +17,25 @@
         android:onClick="@{() -> listener.onItemClick(beer)}"
         android:onLongClick="@{() -> listener.onItemLongClick(beer)}">
 
+        <ImageView
+            android:id="@+id/cover"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cover="@{beer.image_url}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
     <TextView
             style="@style/Title"
             android:id="@+id/name"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@{beer.name}"
             android:layout_marginTop="@dimen/item_margin"
             android:layout_marginStart="@dimen/item_margin"
             android:layout_marginEnd="@dimen/item_margin"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cover"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/tagline"/>
@@ -34,13 +43,13 @@
     <TextView
             style="@style/SubTitle"
             android:id="@+id/tagline"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@{beer.tagline}"
             android:layout_marginStart="@dimen/item_margin"
             android:layout_marginEnd="@dimen/item_margin"
             android:layout_marginBottom="@dimen/item_margin"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cover"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name"
             app:layout_constraintBottom_toBottomOf="parent"/>

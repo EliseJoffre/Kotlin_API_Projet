@@ -3,6 +3,7 @@ package elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
+import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.StringListConverter
 import elisejoffre.lpdream.iut.fr.my_api_project.data.remote.BeerResponse
 import elisejoffre.lpdream.iut.fr.my_api_project.data.remote.BeerService
 import elisejoffre.lpdream.iut.fr.my_api_project.data.remote.BeersResponseCallback
@@ -59,8 +60,11 @@ object BeerRepository {
             name = beerResponse.name,
             tagline = beerResponse.tagline,
             description = beerResponse.description,
-            image_url = beerResponse.image_url
-
+            image_url = beerResponse.image_url,
+            food_pairing =  StringListConverter().fromList(beerResponse.food_pairing),
+            brewers_tips = beerResponse.brewers_tips,
+            abv = beerResponse.abv,
+            first_brewed = beerResponse.first_brewed
     )
 
     //endregion

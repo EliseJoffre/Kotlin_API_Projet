@@ -33,6 +33,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/StringListConverter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/remote/BeerResponse.kt">
           <value>
             <set />
@@ -53,7 +58,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/utils/StringListConverter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/res/layout/activity_create_beer.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/res/layout/activity_detail_beer.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/res/layout/item_beer.xml">
           <value>
             <set />
           </value>
