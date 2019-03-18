@@ -4,7 +4,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import elisejoffre.lpdream.iut.fr.my_api_project.BR
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.BaseObject
+import elisejoffre.lpdream.iut.fr.my_api_project.data.model.BaseObject
 import elisejoffre.lpdream.iut.fr.my_api_project.utils.OnItemClickListener
 
 abstract class BaseViewHolder<T: BaseObject, V: ViewDataBinding>(private val viewDataBinding: V): RecyclerView.ViewHolder(viewDataBinding.root) {

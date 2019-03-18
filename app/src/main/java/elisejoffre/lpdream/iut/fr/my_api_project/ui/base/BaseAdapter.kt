@@ -2,7 +2,7 @@ package elisejoffre.lpdream.iut.fr.my_api_project.ui.base
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.ListAdapter
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.BaseObject
+import elisejoffre.lpdream.iut.fr.my_api_project.data.model.BaseObject
 import elisejoffre.lpdream.iut.fr.my_api_project.utils.DiffCallback
 import elisejoffre.lpdream.iut.fr.my_api_project.utils.OnItemClickListener
 

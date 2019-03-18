@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import elisejoffre.lpdream.iut.fr.my_api_project.R
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer
+import elisejoffre.lpdream.iut.fr.my_api_project.data.model.Beer
 import elisejoffre.lpdream.iut.fr.my_api_project.data.remote.BeersResponseCallback
 import elisejoffre.lpdream.iut.fr.my_api_project.databinding.ActivityBeersBinding
 import elisejoffre.lpdream.iut.fr.my_api_project.extension.showAction
@@ -25,8 +25,7 @@ class BeersActivity : BaseActivity<BeersViewModel, ActivityBeersBinding>() {
 
     override val layout: Int = R.layout.activity_beers
 
-    override fun setViewModel(): Class<BeersViewModel> = BeersViewModel::class.java
-
+    override val viewModel: BeersViewModel by viewModel()
     private var beersAdapter = BeersAdapter(this)
 
     override fun initView(savedInstanceState: Bundle?) {
@@ -83,8 +82,6 @@ class BeersActivity : BaseActivity<BeersViewModel, ActivityBeersBinding>() {
         }
     }
 
-
-
     private fun showDeletePopup(beer: Beer) {
         alert(getString(R.string.delete_beer_warning, beer.name)) {
             yesButton { viewModel.delete(beer) }
@@ -92,3 +89,4 @@ class BeersActivity : BaseActivity<BeersViewModel, ActivityBeersBinding>() {
         }.show()
     }
 }
+

@@ -3,6 +3,7 @@ package elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale
 import android.util.Log
 import androidx.room.*
 import androidx.lifecycle.LiveData
+import elisejoffre.lpdream.iut.fr.my_api_project.data.model.Beer
 
 @Dao
 interface BeerDao {

@@ -16,7 +16,7 @@ abstract class BaseActivity<V: AndroidViewModel, B: ViewDataBinding>: AppCompatA
 
     protected abstract val layout: Int
 
-    protected val viewModel: V by lazy { ViewModelProviders.of(this).get(setViewModel()) }
+    protected abstract val viewModel: V
 
     lateinit var binding: B
 
@@ -45,6 +45,5 @@ abstract class BaseActivity<V: AndroidViewModel, B: ViewDataBinding>: AppCompatA
 
     protected abstract fun initView(savedInstanceState: Bundle?)
 
-    protected abstract fun setViewModel(): Class<V>
 
 }

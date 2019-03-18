@@ -19,7 +19,7 @@ class CreateBeerActivity : BaseActivity<CreateBeerViewModel, ActivityCreateBeerB
 
     override val layout: Int = R.layout.activity_create_beer
 
-    override fun setViewModel(): Class<CreateBeerViewModel> = CreateBeerViewModel::class.java
+    override val viewModel: CreateBeerViewModel by viewModel()
 
     override fun initView(savedInstanceState: Bundle?) {
         setupToolbar()

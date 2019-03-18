@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import elisejoffre.lpdream.iut.fr.my_api_project.BR
 import elisejoffre.lpdream.iut.fr.my_api_project.R
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer
+import elisejoffre.lpdream.iut.fr.my_api_project.data.model.Beer
 import elisejoffre.lpdream.iut.fr.my_api_project.databinding.ItemBeerBinding
 import elisejoffre.lpdream.iut.fr.my_api_project.ui.base.BaseAdapter
 import elisejoffre.lpdream.iut.fr.my_api_project.ui.base.BaseViewHolder

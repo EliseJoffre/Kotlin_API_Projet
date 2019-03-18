@@ -1,7 +1,7 @@
 package elisejoffre.lpdream.iut.fr.my_api_project.utils
 
 import androidx.recyclerview.widget.DiffUtil
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.BaseObject
+import elisejoffre.lpdream.iut.fr.my_api_project.data.model.BaseObject
 
 class DiffCallback<T: BaseObject>(private val updateWhen: ((T, T) -> Boolean)?): DiffUtil.ItemCallback<T>() {
 

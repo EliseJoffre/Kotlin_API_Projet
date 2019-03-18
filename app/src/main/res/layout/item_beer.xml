@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="item" type="elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer"/>
+        <variable name="item" type="elisejoffre.lpdream.iut.fr.my_api_project.data.model.Beer"/>
         <variable name="listener" type="elisejoffre.lpdream.iut.fr.my_api_project.utils.OnItemClickListener"/>
     </data>
 

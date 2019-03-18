@@ -16,8 +16,7 @@ class DetailBeerActivity : BaseActivity<DetailBeerViewModel, ActivityDetailBeerB
 
     override val layout: Int = R.layout.activity_detail_beer
 
-    override fun setViewModel(): Class<DetailBeerViewModel> = DetailBeerViewModel::class.java
-
+    override val viewModel: DetailBeerViewModel by viewModel()
     override fun initView(savedInstanceState: Bundle?) {
         viewModel.beerId.value = intent.getIntExtra("id", 0)
         setupToolbar()

@@ -1,6 +1,6 @@
 package elisejoffre.lpdream.iut.fr.my_api_project.utils
 
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.BaseObject
+import elisejoffre.lpdream.iut.fr.my_api_project.data.model.BaseObject
 
 interface OnItemClickListener<T: BaseObject> {
 

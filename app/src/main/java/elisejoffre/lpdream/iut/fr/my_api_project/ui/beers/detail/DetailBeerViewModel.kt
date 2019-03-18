@@ -5,14 +5,18 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer
 import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.BeerRepository
+import elisejoffre.lpdream.iut.fr.my_api_project.data.model.Beer
+import org.koin.standalone.KoinComponent
+import org.koin.standalone.inject
 
-class DetailBeerViewModel(application: Application): AndroidViewModel(application) {
+class DetailBeerViewModel(application: Application): AndroidViewModel(application) , KoinComponent {
+
+    private val beerRepository: BeerRepository by inject()
 
     var beerId: MutableLiveData<Int> = MutableLiveData()
 
-    var beer: LiveData<Beer> = Transformations.switchMap(beerId) { id -> BeerRepository.getById(id)
+    var beer: LiveData<Beer> = Transformations.switchMap(beerId) { id -> beerRepository.getById(id)
     }
 
 
