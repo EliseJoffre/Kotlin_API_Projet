@@ -1,4 +1,4 @@
-package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.create
+package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.create
 
 import android.os.Bundle
 import android.view.Menu
@@ -9,29 +9,21 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.ViewModelProviders
 import elisejoffre.lpdream.iut.fr.my_api_project.R
+import elisejoffre.lpdream.iut.fr.my_api_project.databinding.ActivityCreateBeerBinding
+import elisejoffre.lpdream.iut.fr.my_api_project.ui.base.BaseActivity
 
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-class CreateBeerActivity : AppCompatActivity() {
+class CreateBeerActivity : BaseActivity<CreateBeerViewModel, ActivityCreateBeerBinding>() {
 
-    private lateinit var binding: elisejoffre.lpdream.iut.fr.my_api_project.databinding.ActivityCreateBeerBinding
+    override val layout: Int = R.layout.activity_create_beer
 
-    private val viewModel: CreateBeerViewModel by lazy { ViewModelProviders.of(this).get(CreateBeerViewModel::class.java) }
+    override fun setViewModel(): Class<CreateBeerViewModel> = CreateBeerViewModel::class.java
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_create_beer)
-        binding.setVariable(BR.viewModel, viewModel)
-        binding.setLifecycleOwner(this)
-
+    override fun initView(savedInstanceState: Bundle?) {
         setupToolbar()
         setupViews()
-    }
-
-    override fun finish() {
-        super.finish()
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -61,8 +53,7 @@ class CreateBeerActivity : AppCompatActivity() {
 
     private fun setupViews() {
         binding.nameEditText.requestFocus()
-        binding.tagEditText.requestFocus()
-        binding.descriptionEditText.requestFocus()
+
 
     }
 

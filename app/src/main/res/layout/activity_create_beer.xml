@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="viewModel" type="elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.create.CreateBeerViewModel"/>
+        <variable name="viewModel" type="elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.create.CreateBeerViewModel"/>
     </data>
 
     <LinearLayout
@@ -12,7 +12,7 @@
         android:layout_height="match_parent" >
 
 
-    <androidx.appcompat.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             style="@style/Toolbar"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -28,6 +28,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/item_margin">
 
+                <ImageView
+                    android:id="@+id/imgBeer"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/beer71"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
 
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -39,11 +48,11 @@
                     android:textColorHint="@color/colorAccent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgBeer">
                     >
 
 
-                <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/nameEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -94,6 +103,68 @@
                         tools:text="description"
                         android:text="@={viewModel.description}" />
 
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/food_pairingLayout"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Food Pairing"
+                    android:textColorHint="@color/colorAccent"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/descriptionLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/foodPairingEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Food Pairing"
+                        android:text="@={viewModel.food_pairing}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/brewers_tipsLayout"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Brewers Tips"
+                    android:textColorHint="@color/colorAccent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/food_pairingLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/brewers_tipsEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Brewers Tips"
+                        android:text="@={viewModel.brewers_tips}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/abvLayout"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Alcohol by volume"
+                    android:textColorHint="@color/colorAccent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/brewers_tipsLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/abvEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Brewers Tips"
+                        android:text="@={viewModel.abv}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 

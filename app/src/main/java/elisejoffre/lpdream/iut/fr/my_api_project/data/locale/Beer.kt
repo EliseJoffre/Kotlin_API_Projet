@@ -2,6 +2,7 @@ package elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.BaseObject
 import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.StringListConverter
 import java.util.*
 
@@ -9,7 +10,7 @@ import java.util.*
 data class Beer(
 
         @PrimaryKey
-        var id: Int = 0,
+        override var id: Int = 0,
 
         var name: String = "Nom",
 
@@ -17,7 +18,7 @@ data class Beer(
 
         var description: String = "Description ",
 
-        var image_url:String? = null,
+        var image_url:String? = "",
 
         var food_pairing: String = "",
 
@@ -28,4 +29,5 @@ data class Beer(
         var first_brewed: String = ""
 
 
-)
+
+): BaseObject

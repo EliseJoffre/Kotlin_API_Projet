@@ -6,7 +6,7 @@
         >
 
     <data>
-        <variable name="viewModel" type="elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.detail.DetailBeerViewModel"/>
+        <variable name="viewModel" type="elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.detail.DetailBeerViewModel"/>
     </data>
 
     <LinearLayout

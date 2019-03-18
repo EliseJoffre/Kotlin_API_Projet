@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/BaseObject.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/Beer.kt">
           <value>
             <set />
@@ -43,6 +48,31 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/base/BaseActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/base/BaseAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/base/BaseViewHolder.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/beers/create/CreateBeerActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/beers/create/CreateBeerViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/beers/detail/DetailBeerActivity.kt">
           <value>
             <set />
@@ -53,12 +83,37 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/beers/list/BeersActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/beers/list/BeersAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/utils/BindingAdapters.kt">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/utils/DiffCallback.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/utils/OnItemClickListener.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/utils/StringListConverter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/res/layout/activity_beers.xml">
           <value>
             <set />
           </value>

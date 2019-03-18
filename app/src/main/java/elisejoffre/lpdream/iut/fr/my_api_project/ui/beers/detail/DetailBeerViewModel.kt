@@ -1,4 +1,4 @@
-package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.detail
+package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.detail
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

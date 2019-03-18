@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".App">
-        <activity android:name=".ui.beers.list.BeersActivity">
+        <activity android:name="elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.list.BeersActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -18,9 +18,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.beers.create.CreateBeerActivity"/>
+        <activity android:name="elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.create.CreateBeerActivity"/>
 
-        <activity android:name=".ui.beers.detail.DetailBeerActivity"/>
+        <activity android:name="elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.detail.DetailBeerActivity"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.list
+package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.list
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,25 +15,21 @@ import elisejoffre.lpdream.iut.fr.my_api_project.databinding.ActivityBeersBindin
 import elisejoffre.lpdream.iut.fr.my_api_project.extension.showAction
 import elisejoffre.lpdream.iut.fr.my_api_project.extension.showError
 import elisejoffre.lpdream.iut.fr.my_api_project.extension.startAnimatedActivity
-import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.create.CreateBeerActivity
-import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.detail.DetailBeerActivity
+import elisejoffre.lpdream.iut.fr.my_api_project.ui.base.BaseActivity
+import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.create.CreateBeerActivity
+import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.detail.DetailBeerActivity
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
-class BeersActivity : AppCompatActivity() {
+class BeersActivity : BaseActivity<BeersViewModel, ActivityBeersBinding>() {
 
-    private lateinit var binding: ActivityBeersBinding
+    override val layout: Int = R.layout.activity_beers
 
-    private val viewModel: BeersViewModel by lazy { ViewModelProviders.of(this).get(BeersViewModel::class.java) }
+    override fun setViewModel(): Class<BeersViewModel> = BeersViewModel::class.java
 
-    private var beersAdapter = BeersAdapter()
+    private var beersAdapter = BeersAdapter(this)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_beers)
-        binding.setVariable(BR.viewModel, viewModel)
-        binding.setLifecycleOwner(this)
-
+    override fun initView(savedInstanceState: Bundle?) {
         setupAdapter()
         setupFab()
         setupRecyclerView()

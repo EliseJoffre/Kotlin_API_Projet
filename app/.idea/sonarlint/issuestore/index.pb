@@ -68,3 +68,15 @@ O
 Zsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/StringListConverter.kt,3/f/3f0f2e5628d94324d5a1ecf55e13381626d194ff
 L
 src/main/AndroidManifest.xml,0/6/066a3db98a4a279fde40d6ddf92c417b5c93198b
+Å
+Qsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/BaseObject.kt,3/c/3c52cbb756459d1ee5bc839f20a838f764ff0900
+
+Osrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/base/BaseActivity.kt,2/9/29d5e04a12dd1564a8aa65134fce5d9d20797c5e
+}
+Msrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/utils/DiffCallback.kt,f/2/f2b6bd27e1109e94c4c7dbd1d537d90e74ccd9c4
+Ñ
+Tsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/utils/OnItemClickListener.kt,9/0/90542c9609a52651cc981d56740f37febbaba28e
+~
+Nsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/base/BaseAdapter.kt,b/0/b04facd2f554df7ef1e03349887791a91787777d
+Å
+Qsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/base/BaseViewHolder.kt,a/a/aa249627535cb4173a9832144169a042510073e8

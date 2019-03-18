@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="beer" type="elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer"/>
-        <variable name="listener" type="elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.list.BeersAdapter.OnBeerClickListener"/>
+        <variable name="item" type="elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer"/>
+        <variable name="listener" type="elisejoffre.lpdream.iut.fr.my_api_project.utils.OnItemClickListener"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,14 +14,14 @@
         android:background="?attr/selectableItemBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> listener.onItemClick(beer)}"
-        android:onLongClick="@{() -> listener.onItemLongClick(beer)}">
+        android:onClick="@{() -> listener.onItemClick(item)}"
+        android:onLongClick="@{() -> listener.onItemLongClick(item)}">
 
         <ImageView
             android:id="@+id/cover"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:cover="@{beer.image_url}"
+            app:cover="@{item.image_url}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -31,7 +31,7 @@
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{beer.name}"
+            android:text="@{item.name}"
             android:layout_marginTop="@dimen/item_margin"
             android:layout_marginStart="@dimen/item_margin"
             android:layout_marginEnd="@dimen/item_margin"
@@ -45,7 +45,7 @@
             android:id="@+id/tagline"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{beer.tagline}"
+            android:text="@{item.tagline}"
             android:layout_marginStart="@dimen/item_margin"
             android:layout_marginEnd="@dimen/item_margin"
             android:layout_marginBottom="@dimen/item_margin"
