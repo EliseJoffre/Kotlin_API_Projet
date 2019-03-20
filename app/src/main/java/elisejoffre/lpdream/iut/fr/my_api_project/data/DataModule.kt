@@ -1,8 +1,8 @@
 package elisejoffre.lpdream.iut.fr.my_api_project.data
 
 import androidx.room.Room
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.BeerDatabase
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.BeerRepository
+import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.BeerDatabase
+
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module.module
 

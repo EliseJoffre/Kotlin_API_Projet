@@ -1,9 +1,9 @@
-package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.list
+package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.list
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.BeerRepository
+import elisejoffre.lpdream.iut.fr.my_api_project.data.BeerRepository
 import elisejoffre.lpdream.iut.fr.my_api_project.data.model.Beer
 import elisejoffre.lpdream.iut.fr.my_api_project.data.remote.BeersResponseCallback
 import org.koin.standalone.KoinComponent

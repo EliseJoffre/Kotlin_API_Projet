@@ -1,11 +1,7 @@
-package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.list
+package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.list
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import elisejoffre.lpdream.iut.fr.my_api_project.R
@@ -16,10 +12,11 @@ import elisejoffre.lpdream.iut.fr.my_api_project.extension.showAction
 import elisejoffre.lpdream.iut.fr.my_api_project.extension.showError
 import elisejoffre.lpdream.iut.fr.my_api_project.extension.startAnimatedActivity
 import elisejoffre.lpdream.iut.fr.my_api_project.ui.base.BaseActivity
-import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.create.CreateBeerActivity
-import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.detail.DetailBeerActivity
+import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.create.CreateBeerActivity
+import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.detail.DetailBeerActivity
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BeersActivity : BaseActivity<BeersViewModel, ActivityBeersBinding>() {
 

@@ -1,8 +1,8 @@
-package elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale
+package elisejoffre.lpdream.iut.fr.my_api_project.data
 
-import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
+import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.BeerDao
 import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.StringListConverter
 import elisejoffre.lpdream.iut.fr.my_api_project.data.model.Beer
 import elisejoffre.lpdream.iut.fr.my_api_project.data.remote.BeerResponse
@@ -25,7 +25,7 @@ class BeerRepository : KoinComponent {
 
     fun insertAll(beers: List<Beer>) = doAsync{
         beerDao.insertAll(beers)
-        Log.d("beerRepository","inserting movies: $beers")
+        Log.d("beerRepository","inserting beers: $beers")
     }
 
     fun insert(beer: Beer) = insertAll(listOf(beer))

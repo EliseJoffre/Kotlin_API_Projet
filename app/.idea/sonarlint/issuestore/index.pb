@@ -5,8 +5,6 @@
 ^src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/beers/create/CreateBeerViewModel.kt,f/a/fa7c228590082e9179d101952427f9b46ac3e1dd
 É
 Ssrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/BeerDatabase.kt,a/7/a7c231901e76cfb9d4e396479a26d989e89f082f
-Ö
-Usrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/BeerRepository.kt,3/e/3e82b907a236327afe0ebdc088ca0a5e70f79a06
 ~
 Nsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/BeerDao.kt,3/9/3995c7a139a4a625ab1bddcc8df09bd044e3d666
 é
@@ -21,8 +19,6 @@ Isrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/extension/View.kt,5/4/
 Msrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/extension/Activity.kt,5/0/50318d6efe6c2ab5ee01ea1ce52224121a308527
 Ä
 Psrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/utils/BindingAdapters.kt,c/d/cde93753a789b01a076ef083c808d55541c1df69
-{
-Ksrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/Beer.kt,d/f/dfb5dfca72a44b75448984411b1236f4b0cf8704
 å
 \src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/remote/BeersResponseCallback.kt,5/4/54b564096fd4a5b4006fa5a21ef3177258f749e9
 Ç
@@ -68,8 +64,6 @@ O
 Zsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/StringListConverter.kt,3/f/3f0f2e5628d94324d5a1ecf55e13381626d194ff
 L
 src/main/AndroidManifest.xml,0/6/066a3db98a4a279fde40d6ddf92c417b5c93198b
-Å
-Qsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/BaseObject.kt,3/c/3c52cbb756459d1ee5bc839f20a838f764ff0900
 
 Osrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/base/BaseActivity.kt,2/9/29d5e04a12dd1564a8aa65134fce5d9d20797c5e
 }
@@ -80,3 +74,15 @@ Tsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/utils/OnItemClickListen
 Nsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/base/BaseAdapter.kt,b/0/b04facd2f554df7ef1e03349887791a91787777d
 Å
 Qsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/base/BaseViewHolder.kt,a/a/aa249627535cb4173a9832144169a042510073e8
+z
+Jsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/model/Beer.kt,4/f/4f040657486fddac50d0a57690bc061041ad683b
+Ä
+Psrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/model/BaseObject.kt,6/8/6892886a7cc2398c9eeead3755c7732f9e92d4da
+~
+Nsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/BeerRepository.kt,1/0/109a5d0614bc8ef0baec0d81c0ee75a67e29659c
+t
+Dsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/AppModule.kt,d/9/d9f26672e26a602abeb0ad43aa6526da4189389b
+x
+Hsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/ViewModule.kt,e/7/e774c84107c840f1c99bd9daa0597449b3e46bfd
+z
+Jsrc/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/DataModule.kt,e/6/e63fe5a0d1eb80e970937ba42a4ac653b0c6e029

@@ -1,7 +1,6 @@
 package elisejoffre.lpdream.iut.fr.my_api_project
 
 import android.app.Application
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.BeerRepository
 import org.koin.android.ext.android.startKoin
 
 class  App: Application() {

@@ -2,7 +2,6 @@ package elisejoffre.lpdream.iut.fr.my_api_project.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import elisejoffre.lpdream.iut.fr.my_api_project.data.model.BaseObject
 
 @Entity(tableName = "beer")
 data class Beer(
@@ -25,7 +24,6 @@ data class Beer(
         var abv: String = "",
 
         var first_brewed: String = ""
-
 
 
 ): BaseObject

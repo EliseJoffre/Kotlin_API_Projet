@@ -13,6 +13,31 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/App.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/AppModule.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/BeerRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/DataModule.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/BaseObject.kt">
           <value>
             <set />
@@ -38,12 +63,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/DateConverterToString.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/locale/StringListConverter.kt">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/model/BaseObject.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/model/Beer.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/remote/BeerResponse.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/remote/BeerService.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/data/remote/BeersResponseCallback.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/ViewModule.kt">
           <value>
             <set />
           </value>
@@ -93,6 +148,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/ui/beers/list/BeersViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/elisejoffre/lpdream/iut/fr/my_api_project/utils/BindingAdapters.kt">
           <value>
             <set />
@@ -129,6 +189,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/res/layout/item_beer.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/res/values/strings.xml">
           <value>
             <set />
           </value>

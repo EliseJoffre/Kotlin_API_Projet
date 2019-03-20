@@ -7,10 +7,9 @@ import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModelProviders
 import elisejoffre.lpdream.iut.fr.my_api_project.BR
 import elisejoffre.lpdream.iut.fr.my_api_project.R
-import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.list.BeersActivity
+import elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.list.BeersActivity
 
 abstract class BaseActivity<V: AndroidViewModel, B: ViewDataBinding>: AppCompatActivity() {
 

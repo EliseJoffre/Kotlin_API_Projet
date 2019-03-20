@@ -1,19 +1,18 @@
-package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.create
+package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.create
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.library.baseAdapters.BR
-import androidx.lifecycle.ViewModelProviders
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import elisejoffre.lpdream.iut.fr.my_api_project.R
 import elisejoffre.lpdream.iut.fr.my_api_project.databinding.ActivityCreateBeerBinding
 import elisejoffre.lpdream.iut.fr.my_api_project.ui.base.BaseActivity
-
+import kotlinx.android.synthetic.main.activity_create_beer.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
+import java.util.*
 
 class CreateBeerActivity : BaseActivity<CreateBeerViewModel, ActivityCreateBeerBinding>() {
 
@@ -22,8 +21,8 @@ class CreateBeerActivity : BaseActivity<CreateBeerViewModel, ActivityCreateBeerB
     override val viewModel: CreateBeerViewModel by viewModel()
 
     override fun initView(savedInstanceState: Bundle?) {
+        setupDatePicker()
         setupToolbar()
-        setupViews()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -51,12 +50,23 @@ class CreateBeerActivity : BaseActivity<CreateBeerViewModel, ActivityCreateBeerB
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    private fun setupViews() {
-        binding.nameEditText.requestFocus()
+    private fun setupDatePicker() {
 
 
+        first_brewedEditText.setOnClickListener{
+
+            val cal = Calendar.getInstance()
+            val y = cal.get(Calendar.YEAR)
+            val m = cal.get(Calendar.MONTH)
+            val d = cal.get(Calendar.DAY_OF_MONTH)
+
+            val datepickerdialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+
+                first_brewedEditText.setText("" + monthOfYear + "/" + year)
+                viewModel.first_brewed.value= "" + monthOfYear + "/" + year
+            }, y, m, d)
+
+            datepickerdialog.show()
+        }
     }
-
-
-
 }

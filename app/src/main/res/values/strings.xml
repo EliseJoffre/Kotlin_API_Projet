@@ -3,14 +3,18 @@
     <string name="yes">Oui</string>
     <string name="no">Non</string>
     <string name="confirm">Confirmer</string>
-    <string name="beers">Bières</string>
+    <string name="beers">Beers</string>
     <string name="create_beer">Ajouter une bière</string>
     <string name="delete_beer">Supprimer une bière</string>
     <string name="delete_beer_warning">Voulez-vous vraiment supprimer la bière %1$s?</string>
 
-    <string name="name">Nom</string>
+    <string name="name">Name</string>
     <string name="tag">Tag</string>
     <string name="description">Description</string>
+    <string name="food_pairing">Food Pairing</string>
+    <string name="brewers_tips">Brewers Tips</string>
+    <string name="abv">Alcohol by volume</string>
+    <string name="first_brewed">First Brewed</string>
 
     <string name="beers_loaded">Les bières ont bien été récupérées.</string>
     <string name="beers_loading_error">Désolé, une erreur a empêché la récupération des bières.</string>

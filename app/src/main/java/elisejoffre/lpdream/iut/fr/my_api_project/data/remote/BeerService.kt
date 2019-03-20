@@ -1,14 +1,11 @@
 package elisejoffre.lpdream.iut.fr.my_api_project.data.remote
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import elisejoffre.lpdream.iut.fr.my_api_project.data.locale.locale.Beer
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface BeerService {
 

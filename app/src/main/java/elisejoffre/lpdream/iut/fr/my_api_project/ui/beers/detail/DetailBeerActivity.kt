@@ -1,16 +1,10 @@
-package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.beers.detail
+package elisejoffre.lpdream.iut.fr.my_api_project.ui.beers.detail
 
 import android.os.Bundle
-import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.library.baseAdapters.BR
-import androidx.lifecycle.ViewModelProviders
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import elisejoffre.lpdream.iut.fr.my_api_project.R
 import elisejoffre.lpdream.iut.fr.my_api_project.databinding.ActivityDetailBeerBinding
 import elisejoffre.lpdream.iut.fr.my_api_project.ui.base.BaseActivity
-
 
 class DetailBeerActivity : BaseActivity<DetailBeerViewModel, ActivityDetailBeerBinding>() {
 
